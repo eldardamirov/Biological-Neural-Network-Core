@@ -97,11 +97,47 @@ class Network
         else
             {
             print ( "Error: Inheriting networks have different size." );
-            break;
             }
         
         }
+        
+    func update()
+        {
+        let numberOfNeurons: UInt = UInt ( neurons.count );
+        for index in numberOfInputs!..<numberOfNeurons
+            {
+            neurons [ Int ( index ) ].calculateOutput();
+            }
+        }
     
+    func getOutput ( id: UInt ) -> Double
+        {
+        if ( id < numberOfInputs! )
+            {
+            return neurons [ Int ( numberOfInputs! + numberOfHiddenLayers! + id ) ].getOutput();
+            }
+        else
+            {
+            print ( "Id is incorrect." );
+            }
+        }
+        
+    func getNeurons() -> [ Neuron ]
+        {
+        return neurons;
+        }
+    
+    func setOutput ( id: UInt, value: Double )
+        {
+        if ( id < numberOfInputs! )
+            {
+            return neurons [ Int ( numberOfInputs! + numberOfHiddenLayers! + id ) ].setOutput ( output: value );
+            }
+        else
+            {
+            print ( "Id is incorrect." );
+            }
+        }
     
     
     };
