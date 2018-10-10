@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		86C8772A216E749B005D661F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C87729216E749B005D661F /* main.swift */; };
+		86C87731216E8FFE005D661F /* Neuron.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C87730216E8FFE005D661F /* Neuron.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,6 +26,7 @@
 /* Begin PBXFileReference section */
 		86C87726216E749A005D661F /* Biological Neural Network Core */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Biological Neural Network Core"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86C87729216E749B005D661F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		86C87730216E8FFE005D661F /* Neuron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neuron.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXGroup;
 			children = (
 				86C87729216E749B005D661F /* main.swift */,
+				86C87730216E8FFE005D661F /* Neuron.swift */,
 			);
 			path = "Biological Neural Network Core";
 			sourceTree = "<group>";
@@ -119,6 +122,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				86C87731216E8FFE005D661F /* Neuron.swift in Sources */,
 				86C8772A216E749B005D661F /* main.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
