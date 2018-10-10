@@ -138,6 +138,29 @@ class Network
             print ( "Id is incorrect." );
             }
         }
+        
+    func mutate ( strength: Double, rate: Double )
+        {
+        for currentNeuron in neurons
+            {
+            currentNeuron.mutate ( mutationStrength: strength, percentageOfNeurons: rate );
+            }
+        
+        }
+        
+    func getInputLayerSize() -> UInt
+        {
+        return numberOfInputs!;
+        }
     
+    func getHiddenLayerSize() -> UInt
+        {
+        return numberOfHiddenLayers!;
+        }  
+    
+    func getOutputLayerSize() -> UInt
+        {
+        return numberOfOutputs!;
+        }
     
     };
