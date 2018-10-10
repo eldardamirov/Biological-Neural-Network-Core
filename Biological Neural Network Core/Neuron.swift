@@ -70,8 +70,14 @@ struct inputCharacteristics
 
 class Neuron
     {
-    init (  )
+    init ()
         {
+        }
+    
+    init ( parentNeuron: Neuron )
+        {
+        self.input = parentNeuron.input;
+        self.output = parentNeuron.output;
         }
     
     lazy var input = inputCharacteristics();

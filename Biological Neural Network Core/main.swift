@@ -45,6 +45,62 @@ class Network
                 }
             }
         };
+        
+    init ( networkA: Network, networkB: Network )
+        {
+        let networkASize = networkA.getNeurons().size();
+        let networkBSize = networkB.getNeurons().size();
+        
+        let outputLevelIndex = UInt ( Int ( numberOfInputs! ) + Int ( numberOfHiddenLayers! ) );
+        let neuronsSumIndex = UInt ( Int ( numberOfInputs! ) + Int ( numberOfHiddenLayers! ) + Int ( numberOfOutputs! ) );
+        
+        if ( networkASize == networkBSize )
+            {
+            numberOfInputs = networkA.getInputLayerSize();
+            numberOfHiddenLayers = networkA.getHiddenLayerSize;
+            numberOfOutputs = networkA.getOutputLayerSize();
+            
+            // crossing over;
+            var swapPoint = Int.random ( in: 0...networkASize );
+            
+            for index in 0..<networkASize
+                {
+                if ( index < swapPoint )
+                    {
+                    neurons.append ( Neuron ( parentNeuron: networkB.getNeurons() [ index ] ) );
+                    }
+                else
+                    {
+                    neurons.append ( Neuron ( parentNeuron: networkA.getNeurons() [ index ] ) );
+                    }
+                    
+                neurons.last?.input.resetOutputReferences();
+                }
+
+            
+            for currentNeuron in neurons [ UInt ( numberOfInputs! )..<outputLevelIndex ]
+                {
+                for neuronToAdd in neurons [ 0..<numberOfInputs ]
+                    {
+                    currentNeuron.addNewInput ( neuronToAdd );
+                    }
+                }
+                
+            for currentNeuron in neurons [ outputLevelIndex..<neuronsSumIndex ]
+                {
+                for neuronToAdd in neurons [ numberOfInputs..<outputLevelIndex ]
+                    {
+                    currentNeuron.addNewInput ( neuronToAdd );
+                    }
+                }
+            }
+        else
+            {
+            print ( "Error: Inheriting networks have different size." );
+            break;
+            }
+        
+        }
     
     
     
