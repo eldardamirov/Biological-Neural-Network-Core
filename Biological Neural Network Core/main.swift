@@ -35,6 +35,15 @@ class Network
                 neurons [ Int ( currentNeuron ) ].addNewInput ( inputNeuron: neurons [ Int ( currentNeuronToAdd ) ] );
                 }
             }
+            
+        for currentNeuron in ( numberOfInputs + numberOfHiddenLayers )..<( numberOfInputs + numberOfHiddenLayers + numberOfOutputs )
+            {
+            neurons.append ( Neuron() );
+            for currentNeuronToAdd in numberOfInputs..<( numberOfInputs + numberOfHiddenLayers )
+                {
+                neurons [ Int ( currentNeuron ) ].addNewInput ( inputNeuron: neurons [ Int ( currentNeuronToAdd ) ] );
+                }
+            }
         };
     
     
