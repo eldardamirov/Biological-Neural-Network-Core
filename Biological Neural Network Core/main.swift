@@ -51,8 +51,6 @@ class Network
         let networkASize = networkA.getNeurons().count;
         let networkBSize = networkB.getNeurons().count;
         
-        let outputLevelIndex = UInt ( Int ( numberOfInputs! ) + Int ( numberOfHiddenLayers! ) );
-        let neuronsSumIndex = UInt ( Int ( numberOfInputs! ) + Int ( numberOfHiddenLayers! ) + Int ( numberOfOutputs! ) );
         
         if ( networkASize == networkBSize )
             {
@@ -60,8 +58,11 @@ class Network
             numberOfHiddenLayers = networkA.getHiddenLayerSize();
             numberOfOutputs = networkA.getOutputLayerSize();
             
+            let outputLevelIndex = UInt ( Int ( numberOfInputs! ) + Int ( numberOfHiddenLayers! ) );
+            let neuronsSumIndex = UInt ( Int ( numberOfInputs! ) + Int ( numberOfHiddenLayers! ) + Int ( numberOfOutputs! ) );
+            
             // crossing over;
-            var swapPoint = Int.random ( in: 0...networkASize );
+            let swapPoint = Int.random ( in: 0...networkASize );
             
             for index in 0..<networkASize
                 {
@@ -78,22 +79,23 @@ class Network
                 }
 
             
-            
-            for currentNeuron in neurons [ UInt ( numberOfInputs! )..<outputLevelIndex ]
+            for currentNeuronIndex in numberOfInputs!..<outputLevelIndex
                 {
-                for neuronToAdd in neurons [ 0..<numberOfInputs ]
+                for neuronToAdd in neurons [ 0..<Int ( numberOfInputs! ) ]
                     {
-                    currentNeuron.addNewInput ( neuronToAdd );
+                    neurons [ Int ( currentNeuronIndex ) ].addNewInput ( inputNeuron: neuronToAdd );
                     }
                 }
                 
-            for currentNeuron in neurons [ outputLevelIndex..<neuronsSumIndex ]
+            for currentNeuronIndex in outputLevelIndex..<neuronsSumIndex
                 {
-                for neuronToAdd in neurons [ numberOfInputs..<outputLevelIndex ]
+                for neuronToAdd in neurons [ Int ( numberOfInputs! )..<Int ( outputLevelIndex ) ]
                     {
-                    currentNeuron.addNewInput ( neuronToAdd );
+                    neurons [ Int ( currentNeuronIndex ) ].addNewInput ( inputNeuron: neuronToAdd );
                     }
                 }
+            
+            
             }
         else
             {

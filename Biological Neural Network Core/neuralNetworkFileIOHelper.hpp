@@ -11,4 +11,28 @@
 
 #include <stdio.h>
 
+#ifdef __cplusplus
+extern "C"
+    {
+#endif
+
+#include <sys/uio.h>
+#include <sys/mman.h>
+#include <sys/stat.h>
+#include <unistd.h>
+#include <fcntl.h>
+#include <stdio.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <unistd.h>
+
+#include <time.h>
+
+
+#ifdef __cplusplus
+    }
+#endif
+
 #endif /* neuralNetworkFileIOHelper_hpp */
