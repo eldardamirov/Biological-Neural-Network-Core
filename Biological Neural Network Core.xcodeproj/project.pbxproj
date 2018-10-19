@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		8648BEDC2179EAEB00365CB4 /* neuralNetworkFileIOHelper.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 8648BEDA2179EAEB00365CB4 /* neuralNetworkFileIOHelper.cpp */; };
 		86C8772A216E749B005D661F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C87729216E749B005D661F /* main.swift */; };
 		86C87731216E8FFE005D661F /* Neuron.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C87730216E8FFE005D661F /* Neuron.swift */; };
 		86C87735216E9FAB005D661F /* fileIOSwiftVersion.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 86C87733216E9FAB005D661F /* fileIOSwiftVersion.cpp */; };
@@ -25,6 +26,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		8648BEDA2179EAEB00365CB4 /* neuralNetworkFileIOHelper.cpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.cpp; path = neuralNetworkFileIOHelper.cpp; sourceTree = "<group>"; };
+		8648BEDB2179EAEB00365CB4 /* neuralNetworkFileIOHelper.hpp */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.cpp.h; path = neuralNetworkFileIOHelper.hpp; sourceTree = "<group>"; };
 		86C87726216E749A005D661F /* Biological Neural Network Core */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Biological Neural Network Core"; sourceTree = BUILT_PRODUCTS_DIR; };
 		86C87729216E749B005D661F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
 		86C87730216E8FFE005D661F /* Neuron.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Neuron.swift; sourceTree = "<group>"; };
@@ -64,10 +67,12 @@
 			isa = PBXGroup;
 			children = (
 				86C87729216E749B005D661F /* main.swift */,
-				86C87733216E9FAB005D661F /* fileIOSwiftVersion.cpp */,
-				86C87734216E9FAB005D661F /* fileIOSwiftVersion.hpp */,
 				86C87730216E8FFE005D661F /* Neuron.swift */,
 				86C87732216E9FAA005D661F /* Biological Neural Network Core-Bridging-Header.h */,
+				86C87733216E9FAB005D661F /* fileIOSwiftVersion.cpp */,
+				86C87734216E9FAB005D661F /* fileIOSwiftVersion.hpp */,
+				8648BEDB2179EAEB00365CB4 /* neuralNetworkFileIOHelper.hpp */,
+				8648BEDA2179EAEB00365CB4 /* neuralNetworkFileIOHelper.cpp */,
 			);
 			path = "Biological Neural Network Core";
 			sourceTree = "<group>";
@@ -133,6 +138,7 @@
 				86C87731216E8FFE005D661F /* Neuron.swift in Sources */,
 				86C8772A216E749B005D661F /* main.swift in Sources */,
 				86C87735216E9FAB005D661F /* fileIOSwiftVersion.cpp in Sources */,
+				8648BEDC2179EAEB00365CB4 /* neuralNetworkFileIOHelper.cpp in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

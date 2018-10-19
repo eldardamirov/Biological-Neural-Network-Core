@@ -48,8 +48,8 @@ class Network
         
     init ( networkA: Network, networkB: Network )
         {
-        let networkASize = networkA.getNeurons().size();
-        let networkBSize = networkB.getNeurons().size();
+        let networkASize = networkA.getNeurons().count;
+        let networkBSize = networkB.getNeurons().count;
         
         let outputLevelIndex = UInt ( Int ( numberOfInputs! ) + Int ( numberOfHiddenLayers! ) );
         let neuronsSumIndex = UInt ( Int ( numberOfInputs! ) + Int ( numberOfHiddenLayers! ) + Int ( numberOfOutputs! ) );
@@ -57,7 +57,7 @@ class Network
         if ( networkASize == networkBSize )
             {
             numberOfInputs = networkA.getInputLayerSize();
-            numberOfHiddenLayers = networkA.getHiddenLayerSize;
+            numberOfHiddenLayers = networkA.getHiddenLayerSize();
             numberOfOutputs = networkA.getOutputLayerSize();
             
             // crossing over;
@@ -77,6 +77,7 @@ class Network
                 neurons.last?.input.resetOutputReferences();
                 }
 
+            
             
             for currentNeuron in neurons [ UInt ( numberOfInputs! )..<outputLevelIndex ]
                 {
@@ -162,5 +163,7 @@ class Network
         {
         return numberOfOutputs!;
         }
+        
+    
     
     };

@@ -3,3 +3,4 @@
 //
 
 #include "fileIOSwiftVersion.hpp"
+#include "neuralNetworkFileIOHelper.hpp"
